@@ -3,8 +3,14 @@ body,
 html {
     margin: 0;
     padding: 0;
+}
+
+body{
     font-family: "Poppins", sans-serif;
     color: #1C1C1C;
+}
+.homeImg{
+    border-radius: 1em;
 }
 
 h1 {
@@ -12,7 +18,6 @@ h1 {
 }
 
 p {
-    text-align: justify;
     font-size: 1.1em
 }
 
@@ -24,9 +29,17 @@ p {
 
 article {
     color: #1C1C1C;
-    padding: 2em;
     padding-left: 10%;
     padding-right: 10%;
+}
+
+.homeArticle{
+    padding: 2em;
+    
+}
+
+.boldThis{
+    font-weight: bold;
 }
 
 .textPadding {
@@ -46,6 +59,10 @@ article {
     color: #183350;
 }
 
+.pink{
+    color: #F4AAB9;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -55,7 +72,7 @@ a:hover {
     text-decoration: none;
 }
 
-/*----------------NAV BAR--------------------*/
+/*---NAV BAR--------------------------------------------------*/
 .mobileNav {
     display: none;
 }
@@ -87,13 +104,12 @@ a:hover {
     font-size: 1.2em;
 }
 
-/*article: header*/
+/*article: header-------------------------------------------------------------*/
 #header {
     display: grid;
     color: white;
     grid-template-columns: auto auto;
     background-color: #5bccfa;
-    text-align: justify;
 }
 
 #headerImg {
@@ -104,7 +120,7 @@ a:hover {
     align-self: center;
 }
 
-/*article: bio*/
+/*article: bio------------------------------------------------------------*/
 #bio {
     display: grid;
     grid-template-columns: auto auto;
@@ -131,14 +147,25 @@ a:hover {
     grid-row: 1 / span 4;
 }
 
-/*article: issues*/
+/*article: issues------------------------------------------------------------------*/
 
 #issues {
     background-color: #F4AAB9;
 }
 
 #myCommitments {
-    color: #1C1C1C;
+    color: #ffffff;
+}
+#canvassingPhotoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em
+}
+#canvassingPhoto{
+    max-width: 50em;
+    align-self: center;
+    justify-self: center;
 }
 
 #issuesContainer {
@@ -155,6 +182,7 @@ a:hover {
     display: block;
     border-radius: 10px;
     text-align: center;
+    padding: 0.5em;
 }
 
 .issuesCard:hover {
@@ -171,20 +199,43 @@ a:hover {
     height: 3em;
 }
 
-/*footer*/
+/*footer---------------------------------------------------------------------------*/
 
-footer{
+footer {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    font-size: 1.1em;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#footerLogo {
+    max-width: 20em;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+#footerContainer{
+    margin-left: 1em;
     display: flex;
     gap: 2em;
 }
 
-#footerLogo{
-    height: 20em;
+.footericon {
+    width: 1.5em;
+    margin-right: 1em;
 }
 
-.footericon{
-    width: 1.5em;
-    margin-right: 1em
+/*-----------------------ISSUES PAGE-----------------------------------------*/
+
+.issueH1{
+    color: #183350;
+    border-bottom: 3px solid #F4AAB9
+}
+.issueH3{
+    color:#5bccfa;
 }
 
 /*------------------------MOBILE & TABLET RESOLUTION---------------------------------- */
@@ -210,15 +261,17 @@ footer{
     #bio {
         display: flex;
         flex-direction: column;
-        text-align: center;
+        justify-content: center;
+        align-items: center;
     }
 
     #meetCayden {
         font-size: 3em;
+        text-align: left;
     }
 
     #bioText {
-        padding-left: 0;
+        align-self: center;
     }
 
     #bioImg {
@@ -241,6 +294,7 @@ footer{
 
     #issuesContainer {
         display: flex;
+        flex-direction: column;
     }
 
     .issuesCard {
@@ -249,7 +303,7 @@ footer{
         justify-content: center;
         background-color: #ffffff;
         display: block;
-        border-radius: 10px;
+        border-radius: 1em;
         text-align: center;
     }
 
@@ -267,6 +321,36 @@ footer{
         height: 3em;
     }
 
+    /*footer---------------------------------------------------------------------*/
+
+    footer {
+        display: grid;
+    }
+
+    #footerContainer{
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    #footerLinks{
+        margin-bottom: 3em;
+    }
+    
+    #footerLogo {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .footericon {
+        width: 1.5em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
     /*--------------NAV BAR MOBILE------------------------------*/
     /*background style for hamburger menu*/
     .mobileNav {
@@ -276,7 +360,7 @@ footer{
     }
 
     #mobileNavLogo {
-        width: 10em;
+        max-width: 8em;
     }
 
     .hamburger {
@@ -284,7 +368,7 @@ footer{
         justify-self: end;
         align-self: center;
         display: block;
-        float: right;
+        overflow: hidden;
     }
 
     .hamburgerLinks {

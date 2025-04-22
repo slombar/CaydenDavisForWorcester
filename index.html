@@ -18,7 +18,7 @@
     <nav class="desktopNav">
 
 
-        <a href="index.html"><img id="navLogo" src="images/blue bkg logo.jpg" alt="logo" /></a>
+        <a href="index.html"><img id="navLogo" class="imgResize" src="images/logo transparent white.png" alt="logo" /></a>
 
         <a class="navLink" href="issues.html">Issues</a>
 
@@ -33,7 +33,7 @@
 
     <nav class="mobileNav">
 
-        <a href="index.html"><img id="mobileNavLogo" src="images/blue bkg logo.jpg" alt="logo" /></a>
+        <a href="index.html"><img id="mobileNavLogo" class="imgResize" src="images/logo transparent white.png" alt="logo" /></a>
 
         <!--hidden links until mobile view-->
 
@@ -64,9 +64,9 @@
 
     <!--MAIN CONTENT-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <main>
-        <article id="header">
+        <article id="header" class="homeArticle">
             <div id="headerImg">
-                <img class="imgResize" id="headshot" src="images/cayden headshot.jpg" alt="Cayden Davis Headshot" />
+                <img class="imgResize homeImg" id="headshot" src="images/cayden headshot.jpg" alt="Cayden Davis Headshot" />
             </div>
             <div id="headerText" class="textPadding">
                 <h1 class="textAlignLeft">
@@ -84,17 +84,18 @@
             </div>
         </article>
 
-        <article id="bio">
+        <article id="bio" class="homeArticle">
 
             <div id="bioImg">
-                <img class="imgResize" src="images/meet cayden.JPG" alt="INSERT PIC OF CAYDEN AND HIS CAT HERE" />
+                <img class="imgResize homeImg" src="images/cayden2.JPG" alt="Cayden Davis" />
             </div>
 
-            <h1 id="meetCayden" class="textPadding textAlignLeft navyblue">
-                Meet Cayden!
-            </h1>
-
             <div id="bioText" class="textPadding">
+
+                <h1 id="meetCayden" class="textPadding textAlignLeft navyblue">
+                    Meet Cayden!
+                </h1>
+
                 <h2 class="textAlignLeft lightblue">
                     I'm running for City Council At-Large because I love this community and believe in its future.
                 </h2>
@@ -129,10 +130,15 @@
 
         </article>
 
-        <article id="issues">
+        <article id="issues" class="homeArticle">
             <h1 id="myCommitments">
                 My Commitments
             </h1>
+
+            <div id="canvassingPhotoContainer">
+                <img id="canvassingPhoto" class="imgResize homeImg" id="headshot" src="images/canvassing.jpg"
+                    alt="Cayden Davis Headshot" />
+            </div>
 
             <div id="issuesContainer">
 
@@ -183,42 +189,45 @@
 
         <img id="footerLogo" src="images/logo.jpg" alt="Cayden Davis Logo" />
 
-        <div id="footerText">
+        <div id="footerContainer">
+            <div id="footerText">
 
-            <h5>
-                Committee to Elect Cayden Davis
-                <br />
-                82 Beaver St #4 Worcester, MA 01603
-            </h5>
+                <h5>
+                    Committee to Elect Cayden Davis
+                    <br />
+                    82 Beaver St #4 Worcester, MA 01603
+                </h5>
 
-            <h5>
-                Treasurer, Justine Davis
-                <br />
-                davis.justine.m@gmail.com
-            </h5>
+                <h5>
+                    Treasurer, Justine Davis
+                    <br />
+                    davis.justine.m@gmail.com
+                </h5>
 
-            <h5> 508-629-9422
-            </h5>
-            <h5>
-                Davis4Worcester@gmail.com
-            </h5>
+                <h5> 508-629-9422
+                    <br />
+                    Davis4Worcester@gmail.com
+                </h5>
 
+            </div>
 
-            <a
-                href="https://www.facebook.com/people/Cayden-Davis-for-Worcester-City-Council-at-Large/61573823937727/?sk=about&section=contact-info"><img
-                    class="footericon" src="images/icons/facebook.svg" alt="facebook" /></a>
-            <a href="https://www.instagram.com/davis4worcester/"><img class="footericon"
-                    src="images/icons/instagram.svg" alt="instagram" /></a>
-            <a href="https://www.tiktok.com/@davis.for.worcester?_t=zt-8uikefrtexc&_r=1"><img class="footericon"
-                    src="images/icons/tiktok.svg" alt="tiktok" /></a>
-            <a href="https://bsky.app/profile/davis4worcester.bsky.social"><img class="footericon"
-                    src="images/icons/bluesky.svg" alt="bluesky" /></a>
-            <a href="https://x.com/davis4worcester"><img class="footericon" src="images/icons/twitter-x.svg"
-                    alt="twitter-x" /></a>
-            <a href="https://linktr.ee/davis4worcester"><img class="footericon" src="images/icons/linktree.svg"
-                    alt="twitter-x" /></a>
+            <div id="footerLinks">
+                <h5 id="connectWithCayden">Connect with Cayden!</h5>
+                <a
+                    href="https://www.facebook.com/people/Cayden-Davis-for-Worcester-City-Council-at-Large/61573823937727/?sk=about&section=contact-info"><img
+                        class="footericon" src="images/icons/facebook.svg" alt="facebook" /></a>
+                <a href="https://www.instagram.com/davis4worcester/"><img class="footericon"
+                        src="images/icons/instagram.svg" alt="instagram" /></a>
+                <a href="https://www.tiktok.com/@davis.for.worcester?_t=zt-8uikefrtexc&_r=1"><img class="footericon"
+                        src="images/icons/tiktok.svg" alt="tiktok" /></a>
+                <a href="https://bsky.app/profile/davis4worcester.bsky.social"><img class="footericon"
+                        src="images/icons/bluesky.svg" alt="bluesky" /></a>
+                <a href="https://x.com/davis4worcester"><img class="footericon" src="images/icons/twitter-x.svg"
+                        alt="twitter-x" /></a>
+                <a href="https://linktr.ee/davis4worcester"><img class="footericon" src="images/icons/linktree.svg"
+                        alt="twitter-x" /></a>
+            </div>
         </div>
-
 
     </footer>
 
