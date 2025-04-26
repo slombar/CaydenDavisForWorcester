@@ -196,7 +196,8 @@ a:hover {
 }
 
 #handshakeIcon{
-    height: 3.5em;
+    height: 3.4em;
+    margin-top: -10px;
 }
 
 /*footer---------------------------------------------------------------------------*/
