@@ -21,6 +21,10 @@ p {
     font-size: 1.1em
 }
 
+.inline{
+    display: inline;
+}
+
 .imgResize {
     object-fit: cover;
     width: 100%;
@@ -148,14 +152,14 @@ a:hover {
 /*article: issues------------------------------------------------------------------*/
 
 #issues {
-    background-color: #F4AAB9;
-    
+    background-color: #5bccfa;
 }
 
 #myCommitments {
-    color: #ffffff;
     text-align: center;
+    color: white;
 }
+
 #canvassingPhotoContainer{
     display: flex;
     flex-direction: column;
@@ -186,7 +190,7 @@ a:hover {
 }
 
 .issuesCard:hover {
-    color: #5bccfa;
+    background-color: #F4AAB9;
 }
 
 .issuesIcon {
@@ -206,6 +210,7 @@ footer {
     display: flex;
     gap: 2em;
     align-items: center;
+    justify-content: center;
     font-size: 1.1em;
     margin-left: 10%;
     margin-right: 10%;
@@ -240,10 +245,50 @@ footer {
 
 .issueH1{
     color: #183350;
+    font-size: 1.8em;
     border-bottom: 3px solid #F4AAB9
 }
 .issueH3{
     color:#5bccfa;
+}
+
+#housing{
+    margin-top: 3em;
+}
+
+/*--------------------------RESOURCES PAGE--------------------------------------*/
+
+#resourceGrid{
+    display: grid;
+    column-gap: 2em;
+    grid-template-columns: auto auto;
+    overflow-wrap: anywhere;
+}
+
+.resourceList li{
+    margin-bottom: 0.5em;
+}
+
+.hoverBlue:hover{
+    color: #5bccfa;
+}
+
+.resourceH1{
+    border-bottom: 3px solid #F4AAB9
+}
+
+.resourceH2{
+    color: #183350;
+    margin-bottom: 0;
+}
+
+#resourcesTitle{
+    margin-top: 3em;
+    margin-bottom: -1em;
+}
+
+#communityHealthLink{
+    margin-bottom: 0.3em;
 }
 
 /*------------------------MOBILE & TABLET RESOLUTION---------------------------------- */
@@ -312,10 +357,6 @@ footer {
         text-align: center;
     }
 
-    .issuesCard:hover {
-        color: #5bccfa;
-    }
-
     /*footer---------------------------------------------------------------------*/
 
     footer {
@@ -344,6 +385,16 @@ footer {
         margin-left: 0.5em;
         margin-right: 0.5em;
     }
+
+    /*----------------------RESOURCES------------------------------------------*/
+    #resourceGrid{
+        display: block;
+    }
+
+    .resource{
+        margin-bottom: 2em;
+    }
+    
 
     /*--------------NAV BAR MOBILE------------------------------*/
     /*background style for hamburger menu*/
