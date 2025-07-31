@@ -189,12 +189,12 @@ a:hover {
 /*article: issues------------------------------------------------------------------*/
 
 #issues {
-    background-color: #183350;
+    background-color: #A7D1E2;
 }
 
 #myCommitments {
     text-align: center;
-    color: #ffffff;
+    color: #1C1C1C;
 }
 
 #canvassingPhotoContainer{
@@ -224,10 +224,13 @@ a:hover {
     border-radius: 10px;
     text-align: center;
     padding: 0.5em;
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Added transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
 }
 
 .issuesCard:hover {
     background-color: #5bccfa;
+    transform: scale(1.05); /* Makes the card bigger on hover */
 }
 
 .issuesIcon {
@@ -335,11 +338,17 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #183350;
+    color: #ffffff;
+}
+
+#testimonialsTitle{
+    margin: 0;
+    color: #5bccfa;
 }
 
 #slideShow{
-    width: 60%;
-    background-color: #efefef;
+    width: 80%;
     border-radius: 1em;
     padding: 1em;
 }
@@ -350,7 +359,7 @@ footer {
 .signature{
     text-align: right;
     font-weight: bold;
-    color: #183350;
+    color: #5bccfa;
 }
 
 #dots{
@@ -368,7 +377,7 @@ footer {
   }
 
   .active, .dot:hover {
-    background-color: #183350 !important;
+    background-color: #2AA9DB !important;
   }
 
   /* Fading animation */
@@ -406,9 +415,13 @@ footer {
     
     #slideShow{
         width: 100%;
-        background-color: #efefef;
         border-radius: 1em;
         padding: 1em;
+    }
+    
+    .dot{
+        width: 2em;
+        height: 2em;
     }
 
     /*article: header*/
@@ -471,7 +484,7 @@ footer {
 
     #bioText {
         align-self: center;
-        padding-right: 0;
+        padding:0;
     }
 
     #bioImg {
