@@ -5,11 +5,12 @@ html {
     padding: 0;
 }
 
-body{
+body {
     font-family: "Poppins", sans-serif;
     color: #1C1C1C;
 }
-.homeImg{
+
+.homeImg {
     border-radius: 1em;
 }
 
@@ -21,7 +22,7 @@ p {
     font-size: 1.1em
 }
 
-.inline{
+.inline {
     display: inline;
 }
 
@@ -37,12 +38,12 @@ article {
     padding-right: 10%;
 }
 
-.homeArticle{
+.homeArticle {
     overflow-wrap: anywhere;
     padding: 2em;
 }
 
-.boldThis{
+.boldThis {
     font-weight: bold;
 }
 
@@ -56,7 +57,7 @@ article {
 }
 
 .lightblue {
-    color: #5bccfa; 
+    color: #5bccfa;
 }
 
 .navyblue {
@@ -104,7 +105,7 @@ a:hover {
     font-size: 1.2em;
 }
 
-.navSocialLinks{
+.navSocialLinks {
     margin-left: auto;
     margin-right: 1em;
 }
@@ -117,11 +118,11 @@ a:hover {
     background-color: #5bccfa;
 }
 
-#firstLine{
+#firstLine {
     color: #183350;
 }
 
-#firstP{
+#firstP {
     font-size: 1.3em;
 }
 
@@ -135,27 +136,34 @@ a:hover {
     padding-right: 0;
 }
 
-#textEndorsementContainer{
+#textEndorsementContainer {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
-#endorsements{
-    margin: 0em 1em 0em 1em;
+#endorsements {
     display: flex;
-    align-items: center;
-    padding: 0.5em;
-    justify-self: flex-end;
+    flex-direction: column;
+    margin-left: 2em;
 }
 
-.eImg{
+#endorsementLogos {
+    display: flex;
+    align-items: center;
+}
+
+#endorsementTitle {
+    color: #183350;
+}
+
+.eImg {
     height: 8em;
     border-radius: 2em;
 }
 
-#vfImg{
-    height: 9em;    
+#vfImg {
+    height: 9em;
     padding-left: 0.2em;
     padding-right: 0.2em;
 }
@@ -197,13 +205,14 @@ a:hover {
     color: #1C1C1C;
 }
 
-#canvassingPhotoContainer{
+#canvassingPhotoContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 1em
 }
-#canvassingPhoto{
+
+#canvassingPhoto {
     max-width: 50em;
     align-self: center;
     justify-self: center;
@@ -224,13 +233,16 @@ a:hover {
     border-radius: 10px;
     text-align: center;
     padding: 0.5em;
-    transition: transform 0.2s ease, background-color 0.2s ease; /* Added transition */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    /* Added transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow */
 }
 
 .issuesCard:hover {
     background-color: #5bccfa;
-    transform: scale(1.05); /* Makes the card bigger on hover */
+    transform: scale(1.05);
+    /* Makes the card bigger on hover */
 }
 
 .issuesIcon {
@@ -239,7 +251,7 @@ a:hover {
     padding: 0;
 }
 
-#handshakeIcon{
+#handshakeIcon {
     height: 3.4em;
     margin-top: -10px;
 }
@@ -265,7 +277,7 @@ footer {
     height: 100%;
 }
 
-#footerContainer{
+#footerContainer {
     margin-left: 1em;
     display: flex;
     gap: 2em;
@@ -279,61 +291,62 @@ footer {
 /*-----------------------ISSUES PAGE-----------------------------------------*/
 
 
-.issue{
+.issue {
     margin-bottom: 3em;
 }
 
-.issueH1{
+.issueH1 {
     color: #183350;
     font-size: 1.8em;
     border-bottom: 3px solid #2AA9DB;
 }
-.issueH3{
-    color:#5bccfa;
+
+.issueH3 {
+    color: #5bccfa;
 }
 
-#housing{
+#housing {
     margin-top: 3em;
 }
 
 /*--------------------------RESOURCES PAGE--------------------------------------*/
 
-#resourceGrid{
+#resourceGrid {
     display: grid;
     column-gap: 2em;
     grid-template-columns: auto auto;
     overflow-wrap: anywhere;
 }
 
-.resourceList li{
+.resourceList li {
     margin-bottom: 0.5em;
 }
 
-.hoverBlue:hover{
+.hoverBlue:hover {
     color: #5bccfa;
 }
 
-.resourceH1{
+.resourceH1 {
     border-bottom: 3px solid #2AA9DB;
 }
 
-.resourceH2{
+.resourceH2 {
     color: #183350;
     margin-bottom: 0;
 }
 
-#resourcesTitle{
+#resourcesTitle {
     margin-top: 3em;
     margin-bottom: -1em;
 }
 
-#communityHealthLink{
+#communityHealthLink {
     margin-bottom: 0.3em;
 }
 
 /*Testimonials*/
 
-#testimonials{
+#testimonials {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -342,27 +355,28 @@ footer {
     color: #ffffff;
 }
 
-#testimonialsTitle{
+#testimonialsTitle {
     margin: 0;
     color: #5bccfa;
 }
 
-#slideShow{
+#slideShow {
     width: 80%;
     border-radius: 1em;
     padding: 1em;
 }
 
-.slides{
+.slides {
     display: none;
 }
-.signature{
+
+.signature {
     text-align: right;
     font-weight: bold;
     color: #5bccfa;
 }
 
-#dots{
+#dots {
     text-align: center;
 }
 
@@ -374,25 +388,32 @@ footer {
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
-  }
+}
 
-  .active, .dot:hover {
+.active,
+.dot:hover {
     background-color: #2AA9DB !important;
-  }
+}
 
-  /* Fading animation */
+/* Fading animation */
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
-  }
-  
-  @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
+}
 
-  /* Next & previous buttons */
-.prev, .next {
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -405,21 +426,21 @@ footer {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
-  }
+}
 
 /*------------------------MOBILE & TABLET RESOLUTION---------------------------------- */
 
 @media (max-width: 1180px) {
 
     /*Testimonials*/
-    
-    #slideShow{
+
+    #slideShow {
         width: 100%;
         border-radius: 1em;
         padding: 1em;
     }
-    
-    .dot{
+
+    .dot {
         width: 2em;
         height: 2em;
     }
@@ -435,8 +456,9 @@ footer {
         max-width: 100%;
     }
 
-    #headshot{
-        border-radius: 2em 2em 0em 0em;;
+    #headshot {
+        border-radius: 2em 2em 0em 0em;
+        ;
     }
 
     #headerText {
@@ -445,26 +467,41 @@ footer {
         padding: 0;
     }
 
-    #textEndorsementContainer{
+    #textEndorsementContainer {
         display: flex;
         flex-direction: column-reverse;
     }
 
-    #endorsements{
+    #endorsements {
         background-color: #183350;
         border-radius: 0em 0em 1em 1em;
         margin: 0;
         margin-top: -10px;
+        flex-direction: row;
         justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 1em
+    }
+    #endorsementLogos {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
     }
 
-    .eImg{
+    #endorsementTitle {
+        color: #ffffff;
+        padding-right: 1em;
+    }
+
+    .eImg {
         height: 5em;
         border-radius: 1em;
     }
 
-    #vfImg{
+    #vfImg {
         height: 6em;
     }
 
@@ -484,7 +521,7 @@ footer {
 
     #bioText {
         align-self: center;
-        padding:0;
+        padding: 0;
     }
 
     #bioImg {
@@ -497,7 +534,7 @@ footer {
 
     /*article: issues*/
 
-    #canvassingPhoto{
+    #canvassingPhoto {
         max-width: inherit;
     }
 
@@ -524,13 +561,13 @@ footer {
         text-align: center
     }
 
-    #footerContainer{
+    #footerContainer {
         margin-left: auto;
         margin-right: auto;
         display: block;
     }
 
-   
+
     #footerLogo {
         object-fit: contain;
         width: 100%;
@@ -547,14 +584,14 @@ footer {
     }
 
     /*----------------------RESOURCES------------------------------------------*/
-    #resourceGrid{
+    #resourceGrid {
         display: block;
     }
 
-    .resource{
+    .resource {
         margin-bottom: 2em;
     }
-    
+
 
     /*--------------NAV BAR MOBILE------------------------------*/
     /*background style for hamburger menu*/
