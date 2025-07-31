@@ -56,15 +56,11 @@ article {
 }
 
 .lightblue {
-    color: #5bccfa;
+    color: #5bccfa; 
 }
 
 .navyblue {
     color: #183350;
-}
-
-.pink{
-    color: #F4AAB9;
 }
 
 a {
@@ -103,7 +99,7 @@ a:hover {
 }
 
 .navLink:hover {
-    color: #F4AAB9;
+    color: #5bccfa;
     text-decoration: none;
     font-size: 1.2em;
 }
@@ -121,13 +117,49 @@ a:hover {
     background-color: #5bccfa;
 }
 
+#firstLine{
+    color: #183350;
+}
+
+#firstP{
+    font-size: 1.3em;
+}
+
 #headerImg {
-    max-width: 20em;
+    max-width: 25em;
 }
 
 #headerText {
     align-self: center;
+    margin-bottom: auto;
+    padding-right: 0;
 }
+
+#textEndorsementContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#endorsements{
+    margin: 0em 1em 0em 1em;
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    justify-self: flex-end;
+}
+
+.eImg{
+    height: 8em;
+    border-radius: 2em;
+}
+
+#vfImg{
+    height: 9em;    
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
+
 
 /*article: bio------------------------------------------------------------*/
 #bio {
@@ -157,7 +189,7 @@ a:hover {
 /*article: issues------------------------------------------------------------------*/
 
 #issues {
-    background-color: #5bccfa;
+    background-color: #183350;
 }
 
 #myCommitments {
@@ -195,7 +227,7 @@ a:hover {
 }
 
 .issuesCard:hover {
-    background-color: #F4AAB9;
+    background-color: #5bccfa;
 }
 
 .issuesIcon {
@@ -251,7 +283,7 @@ footer {
 .issueH1{
     color: #183350;
     font-size: 1.8em;
-    border-bottom: 3px solid #F4AAB9
+    border-bottom: 3px solid #2AA9DB;
 }
 .issueH3{
     color:#5bccfa;
@@ -279,7 +311,7 @@ footer {
 }
 
 .resourceH1{
-    border-bottom: 3px solid #F4AAB9
+    border-bottom: 3px solid #2AA9DB;
 }
 
 .resourceH2{
@@ -368,7 +400,7 @@ footer {
 
 /*------------------------MOBILE & TABLET RESOLUTION---------------------------------- */
 
-@media (max-width: 1100px) {
+@media (max-width: 1180px) {
 
     /*Testimonials*/
     
@@ -390,9 +422,39 @@ footer {
         max-width: 100%;
     }
 
+    #headshot{
+        border-radius: 2em 2em 0em 0em;;
+    }
+
     #headerText {
         align-self: center;
+        margin-bottom: 0;
+        padding: 0;
     }
+
+    #textEndorsementContainer{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #endorsements{
+        background-color: #183350;
+        border-radius: 0em 0em 1em 1em;
+        margin: 0;
+        margin-top: -10px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .eImg{
+        height: 5em;
+        border-radius: 1em;
+    }
+
+    #vfImg{
+        height: 6em;
+    }
+
 
     /*article: bio*/
     #bio {
@@ -422,9 +484,10 @@ footer {
 
     /*article: issues*/
 
-    #myCommitments {
-        text-align: left;
+    #canvassingPhoto{
+        max-width: inherit;
     }
+
 
     #issuesContainer {
         display: flex;
