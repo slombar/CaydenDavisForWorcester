@@ -118,16 +118,26 @@ a:hover {
     align-items: center;
     background-color: #FFF817;
     color: #183350;
-    padding: 0;
     margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#prelimElection{
+    padding-right: 0.5em;
 }
 
 #bannerText {
     padding: 0;
     text-align: center;
     font-weight: bold;
-    margin-right: 0.5em;
-    margin-left: 0.5em;
+}
+
+.star{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
 #bannerLink {
@@ -494,8 +504,27 @@ footer {
 }
 
 /*------------------------MOBILE & TABLET RESOLUTION---------------------------------- */
+@media(max-width: 525px) {
+    .star {
+        display: none
+    }
 
+    #prelimElection {
+        display: block;
+        padding: 0;
+    }
+    
+}
 @media (max-width: 1180px) {
+
+    #bannerContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    
 
     /*Testimonials*/
 
