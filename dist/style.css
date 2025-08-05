@@ -110,6 +110,38 @@ a:hover {
     margin-right: 1em;
 }
 
+/*article banner--------------------------------------------------*/
+
+#banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF817;
+    color: #183350;
+    padding: 0;
+    margin: 0;
+}
+
+#bannerText {
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+#bannerLink {
+    color: #183350;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+#bannerLink:hover{
+    color: #0C6BB4;
+}
+
 /*article: header-------------------------------------------------------------*/
 #header {
     display: grid;
@@ -241,7 +273,7 @@ a:hover {
 
 .issuesCard:hover {
     background-color: #5bccfa;
-    transform: scale(1.05);
+    transform: scale(1.01);
     /* Makes the card bigger on hover */
 }
 
@@ -311,6 +343,34 @@ footer {
 
 /*--------------------------RESOURCES PAGE--------------------------------------*/
 
+#electionDates {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    text-indent: none;
+    padding: 0;
+}
+
+#electionDates li {
+    min-width: 7em;
+    max-width: 17em;
+    padding: 0.5em;
+    border-radius: 1em 0.3em 1em 0.3em;
+    border: 2px solid #183350;
+}
+
+#electionDates li h4 {
+    margin: 0;
+    color: #2AA9DB
+}
+
+#electionDates li p {
+    margin: 0;
+    font-weight: bold;
+    color: #183350;
+}
+
 #resourceGrid {
     display: grid;
     column-gap: 2em;
@@ -322,8 +382,13 @@ footer {
     margin-bottom: 0.5em;
 }
 
+.hoverBlue {
+    color: #0C6BB4;
+}
+
 .hoverBlue:hover {
     color: #5bccfa;
+    border-bottom: 2px solid #5bccfa;
 }
 
 .resourceH1 {
