@@ -125,7 +125,7 @@ a:hover {
     padding-right: 1em;
 }
 
-#prelimElection{
+#prelimElection {
     padding-right: 0.5em;
 }
 
@@ -135,7 +135,7 @@ a:hover {
     font-weight: bold;
 }
 
-.star{
+.star {
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
@@ -148,7 +148,7 @@ a:hover {
     margin-right: 0.5em;
 }
 
-#bannerLink:hover{
+#bannerLink:hover {
     color: #0C6BB4;
 }
 
@@ -203,12 +203,20 @@ a:hover {
 
 .eImg {
     height: 8em;
-    border-radius: 2em;
+}
+
+.eRounded{
+        border-radius: 2em;
+
 }
 
 #vfImg {
     height: 9em;
 }
+
+#carpenters {
+    height: 6em;
+ }
 
 
 /*article: bio------------------------------------------------------------*/
@@ -239,7 +247,7 @@ a:hover {
 /*article: issues------------------------------------------------------------------*/
 
 #issues {
-    background-color: #A7D1E2;
+    background-color: #5bccfa;
 }
 
 #myCommitments {
@@ -247,14 +255,16 @@ a:hover {
     color: #1C1C1C;
 }
 
-#canvassingPhotoContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1em
+.commitmentsPhotos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    justify-items: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
-#canvassingPhoto {
+.commitmentPhoto {
     max-width: 50em;
     align-self: center;
     justify-self: center;
@@ -282,15 +292,22 @@ a:hover {
 }
 
 .issuesCard:hover {
-    background-color: #5bccfa;
+    background-color: #183350;
+    color: #ffffff;
     transform: scale(1.01);
-    /* Makes the card bigger on hover */
 }
 
 .issuesIcon {
     height: 2em;
+    background-color: transparent;
     margin: 0;
     padding: 0;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.issuesCard:hover .issuesIcon {
+    filter: brightness(0) invert(1);
+    transform: scale(1.2);
 }
 
 #handshakeIcon {
@@ -513,18 +530,22 @@ footer {
         display: block;
         padding: 0;
     }
-    
+
 }
+
 @media (max-width: 1180px) {
 
-    #bannerContainer{
+    #bannerContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
-    
+    #hideOnMobile {
+        display: none;
+    }
+
 
     /*Testimonials*/
 
@@ -552,7 +573,6 @@ footer {
 
     #headshot {
         border-radius: 2em 2em 0em 0em;
-        ;
     }
 
     #headerText {
@@ -578,6 +598,7 @@ footer {
         padding: 1em;
         column-gap: 1em;
     }
+
     #endorsementLogos {
         flex-direction: row;
         justify-content: center;
@@ -596,6 +617,10 @@ footer {
 
     #vfImg {
         height: 6em;
+    }
+
+    #carpenters {
+        height: 4em;
     }
 
 
@@ -635,6 +660,14 @@ footer {
     #issuesContainer {
         display: flex;
         flex-direction: column;
+    }
+
+    .commitmentsPhotos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
     }
 
     .issuesCard {
