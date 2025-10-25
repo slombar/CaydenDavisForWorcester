@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="/img/logo.jpg" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        <script>
+        // Client-side send + UX: default endpoint posts to local mail relay at /send
+        // If you run the provided server, it listens at http://localhost:3000/send
+        // You can change this to your deployed server URL.
+        const FORM_ENDPOINT = 'http://localhost:3000/send';
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const form = document.querySelector('#contact form');
+                if (!form) return;
+
+                const submitBtn = form.querySelector('input[type="submit"]');
+                const privacy = form.querySelector('#formConditions');
+
+                function showError(msg) {
+                    let err = form.querySelector('.form-error');
+                    if (!err) {
+                        err = document.createElement('div');
+                        err.className = 'form-error';
+                        err.style.color = 'crimson';
+                        err.style.marginTop = '1rem';
+                        form.appendChild(err);
+                    }
+                    err.textContent = msg;
+                }
+
+                async function sendFormData(fd) {
+                    // send to configured endpoint
+                    try {
+                        const res = await fetch(FORM_ENDPOINT, {
+                            method: 'POST',
+                            body: fd,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        return res.ok;
+                    } catch (err) {
+                        return false;
+                    }
+                }
+
+                form.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+
+                    if (submitBtn) submitBtn.disabled = true;
+
+                    // gather form values into a plain object
+                    const payload = {
+                        firstname: form.querySelector('#fname')?.value || '',
+                        lastname: form.querySelector('#lname')?.value || '',
+                        phone: form.querySelector('#phone')?.value || '',
+                        email: form.querySelector('#email')?.value || '',
+                        subject: form.querySelector('#subject')?.value || '',
+                        textOptIn: !!form.querySelector('#textOptIn')?.checked,
+                    };
+
+                    let sent = false;
+
+                    if (FORM_ENDPOINT) {
+                        // send JSON to your server
+                        try {
+                            const res = await fetch(FORM_ENDPOINT, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                                body: JSON.stringify(payload),
+                            });
+                            sent = res.ok;
+                            if (!sent) {
+                                const body = await res.text();
+                                console.error('Server error', res.status, body);
+                            }
+                        } catch (err) {
+                            console.error('Send failed', err);
+                            sent = false;
+                        }
+                        if (!sent) {
+                            if (submitBtn) submitBtn.disabled = false;
+                            showError('There was a problem sending your message — please try again.');
+                            return;
+                        }
+                    } else {
+                        // no endpoint configured: open user's mail client as fallback
+                        const to = 'sadie67891011@gmail.com';
+                        const subject = encodeURIComponent('Website contact from ' + (payload.firstname || 'Visitor'));
+                        let body = '';
+                        for (const k of Object.keys(payload)) {
+                            body += `${k}: ${payload[k]}\n`;
+                        }
+                        const mailto = `mailto:${to}?subject=${subject}&body=${encodeURIComponent(body)}`;
+                        window.location.href = mailto;
+                        sent = true;
+                    }
+
+                    if (sent) {
+                        // perform fade-out and replace form with thank-you, preserving privacy text
+                        form.classList.add('fade-out');
+                        const ms = 420;
+                        setTimeout(function () {
+                            const thanks = document.createElement('div');
+                            thanks.className = 'thanks-message';
+                            thanks.setAttribute('tabindex', '-1');
+                            thanks.textContent = 'thanks for reaching out!';
+
+                            const parent = form.parentElement;
+                            if (!parent) return;
+
+                            parent.replaceChild(thanks, form);
+
+                            if (privacy) {
+                                const cloned = privacy.cloneNode(true);
+                                cloned.style.marginTop = '1rem';
+                                parent.appendChild(cloned);
+                            }
+
+                            thanks.focus();
+                        }, ms);
+                    }
+                });
+            });
+        </script>
+            <a target="_blank" href="https://bsky.app/profile/davis4worcester.bsky.social">
+                <img class="footericon" src="images/icons/white icons/bluesky.svg" alt="bluesky" />
+            </a>
+            <a target="_blank" href="https://x.com/davis4worcester">
+                <img class="footericon" src="images/icons/white icons/twitter-x.svg" alt="twitter-x" />
+            </a>
+            <a target="_blank" href="https://linktr.ee/davis4worcester">
+                <img class="footericon" src="images/icons/white icons/linktree.svg" alt="twitter-x" />
+            </a>
+        </div>
+
+    </nav>
+
+    <nav class="mobileNav">
+
+        <a href="index.html"><img id="mobileNavLogo" class="imgResize" src="images/TRANSPARENT LOGO WHITE.png"
+                alt="logo" /></a>
+
+        <!--hidden links until mobile view-->
+
+        <a href="javascript:void(0);" class="hamburger" onclick="hamburgerToggle(this)">
+            <i class="fa fa-bars">
+
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </i>
+        </a>
+
+        <!--hamburger menu-->
+
+        <div id="hamburgerLinks">
+
+            <a class="navLink" href="issues.html">Issues</a>
+
+            <a class="navLink" target="_blank" href="https://secure.actblue.com/donate/davis.for.worcester">
+                Donate
+            </a>
+
+            <a class="navLink" target="_blank"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSc3JfciPnsqKwL3QYNokyW2H-rHtfgXGV01bX_q-999RT7wZA/viewform?usp=dialog">
+                Volunteer
+            </a>
+
+            <a class="navLink" href="resources.html">Resources</a>
+
+            <a class="navLink" href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+    <!--MAIN CONTENT-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <main>
+
+        <article id="contact">
+            <h1>Contact Cayden Davis</h1>
+
+            <form action="action_page.php">
+
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Bob" required="true">
+
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Smith" required="true">
+                
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" placeholder="123-456-7890">   
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="bobsmith@gmail.com" required="true">
+
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something, if you'd like!" style="height:200px"></textarea>
+
+
+                <input type="checkbox" id="textOptIn" name="textOptIn" value="Opt In">
+                <label for="textOptIn">I agree to recieve text messages</label><br><br>
+
+                <input type="submit" value="Submit">
+
+                <p id="formConditions">By submitting this form and signing up for texts, you consent to receive donation asks and informational messages from Cayden Davis. 
+                Msg & data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help. 
+                <a id="pp" href="privacypolicy.html">Privacy Policy & Terms</a></p>
+            </form>
+
+        </article>
+
+    </main>
+
+    <footer>
+
+        <img id="footerLogo" src="images/logo.jpg" alt="Cayden Davis Logo" />
+
+        <div id="footerContainer">
+            <div id="footerText">
+
+                <h5>
+                    Committee to Elect Cayden Davis
+                    <br />
+                    82 Beaver St #4 Worcester, MA 01603
+                </h5>
+
+                <h5>
+                    Treasurer: Justine Davis
+                    <br />
+                    davis.Justine.m@gmail.com
+                </h5>
+
+                <h5> 508-629-9422
+                    <br />
+                    Davis4Worcester@gmail.com
+                </h5>
+
+            </div>
+
+            <div id="footerLinks">
+                <h5 id="connectWithCayden">Connect with Cayden:</h5>
+                <a target="_blank"
+                    href="https://www.facebook.com/people/Cayden-Davis-for-Worcester-City-Council-at-Large/61573823937727/?sk=about&section=contact-info"><img
+                        class="footericon" src="images/icons/facebook.svg" alt="facebook" /></a>
+                <a target="_blank" href="https://www.instagram.com/davis4worcester/"><img class="footericon"
+                        src="images/icons/instagram.svg" alt="instagram" /></a>
+                <a target="_blank" href="https://www.tiktok.com/@davis.for.worcester?_t=zt-8uikefrtexc&_r=1"><img
+                        class="footericon" src="images/icons/tiktok.svg" alt="tiktok" /></a>
+                <a target="_blank" href="https://bsky.app/profile/davis4worcester.bsky.social"><img class="footericon"
+                        src="images/icons/bluesky.svg" alt="bluesky" /></a>
+                <a target="_blank" href="https://x.com/davis4worcester"><img class="footericon"
+                        src="images/icons/twitter-x.svg" alt="twitter-x" /></a>
+                <a target="_blank" href="https://linktr.ee/davis4worcester"><img class="footericon"
+                        src="images/icons/linktree.svg" alt="twitter-x" /></a>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+    <style>
+        /*fade-out for the form */
+        .fade-out {
+            transition: opacity 400ms ease, transform 400ms ease;
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+
+        .thanks-message {
+            color: #183350;
+            font-size: 1.4rem;
+            text-transform: none;
+            margin-top: 1rem;
+        }
+    </style>
+
+    <script>
+        // Fade the form out, replace it with a thank-you message, and preserve the privacy paragraph
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('#contact form');
+            if (!form) return;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // find the privacy paragraph so we can keep it
+                const privacy = form.querySelector('#formConditions');
+
+                // start fade-out
+                form.classList.add('fade-out');
+
+                // after transition, replace the form element only
+                const ms = 420; // slightly longer than CSS transition
+                setTimeout(function () {
+                    const thanks = document.createElement('div');
+                    thanks.className = 'thanks-message';
+                    thanks.setAttribute('tabindex', '-1');
+                    thanks.textContent = 'Thanks for reaching out!';
+
+                    // remove form but append the thanks message in its place
+                    const parent = form.parentElement;
+                    if (!parent) return;
+
+                    parent.replaceChild(thanks, form);
+
+                    // if privacy text existed, re-append it below the thanks message
+                    if (privacy) {
+                        // clone to avoid leaving references
+                        const cloned = privacy.cloneNode(true);
+                        cloned.style.marginTop = '1rem';
+                        parent.appendChild(cloned);
+                    }
+
+                    // focus for accessibility
+                    thanks.focus();
+                }, ms);
+            });
+        });
+    </script>
+
+</body>

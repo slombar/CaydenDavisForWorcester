@@ -206,8 +206,7 @@ a:hover {
 }
 
 .eRounded{
-        border-radius: 2em;
-
+     border-radius: 1em;
 }
 
 #vfImg {
@@ -313,6 +312,52 @@ a:hover {
 #handshakeIcon {
     height: 3.4em;
     margin-top: -10px;
+}
+/*article: contact form--------------------------------------------------------*/
+
+#pp{
+    color:#0C6BB4;
+    text-decoration: underline;
+}
+
+#pp:hover{
+    color:#183350;
+}
+
+#formConditions{
+    font-size: 0.9em;
+}
+
+
+input[type=text], #email, select, textarea {
+  width: 100%; 
+  padding: 12px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #5bccfa;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #2AA9DB;
+  transform: scale(1.01);
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
 
 /*footer---------------------------------------------------------------------------*/
@@ -535,6 +580,12 @@ footer {
 
 @media (max-width: 1180px) {
 
+    /*Contact*/
+
+    input[type=submit]{
+        width: 100%;
+    }
+
     #bannerContainer {
         display: flex;
         flex-direction: column;
@@ -612,7 +663,6 @@ footer {
 
     .eImg {
         height: 5em;
-        border-radius: 1em;
     }
 
     #vfImg {
